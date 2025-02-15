@@ -6,7 +6,7 @@
       "config": {
         "maxLambdaSize": "15mb",
         "includeFiles": "templates/**",
-        "installCommand": "pip install -r requirements.txt -t ./api" 
+        "installCommand": "pip install -r requirements.txt -t ./api"
       }
     }
   ],
@@ -14,8 +14,13 @@
     {
       "src": "/static/(.*)",
       "dest": "templates/static/$1",
-      "headers": { "Cache-Control": "public, max-age=31536000" }
+      "headers": {
+        "Cache-Control": "public, max-age=31536000"
+      }
     },
-    { "src": "/(.*)", "dest": "api/app.py" }
+    {
+      "src": "/(.*)",
+      "dest": "api/app.py"
+    }
   ]
 }
