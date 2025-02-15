@@ -6,17 +6,14 @@
       "config": {
         "maxLambdaSize": "15mb",
         "includeFiles": "templates/**",
-        "installCommand": "pip install -r requirements.txt"
+        "installCommand": "pip install -r ../requirements.txt -t ."  
       }
     }
   ],
   "routes": [
     {
       "src": "/static/(.*)",
-      "dest": "templates/static/$1",
-      "headers": {
-        "Cache-Control": "public, max-age=31536000"
-      }
+      "dest": "templates/static/$1"
     },
     {
       "src": "/(.*)",
