@@ -1,31 +1,18 @@
 {
-  "version": 2,
   "builds": [
     {
-      "src": "api/app.py",
-      "use": "@vercel/python",
-      "config": {
-        "maxLambdaSize": "15mb",
-        "runtime": "python3.10",
-        "includeFiles": [
-          "templates/**",
-          "static/**"
-        ]
-      }
+      "src": "app.py",
+      "use": "@vercel/python"
     }
   ],
   "routes": [
     {
       "src": "/static/(.*)",
-      "dest": "/static/$1"
+      "dest": "static/$1"
     },
     {
-      "src": "/",
-      "dest": "api/app.py"
-    },
-    {
-      "src": "/api/(.*)",
-      "dest": "api/app.py"
+      "src": "/(.*)",
+      "dest": "app.py"
     }
   ]
 }
