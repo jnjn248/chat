@@ -2,8 +2,10 @@ from flask import Flask, request, Response, render_template
 from openai import OpenAI
 import os
 import json
+from flask_cors import CORS
 
 app = Flask(__name__, template_folder='templates', static_folder=None)
+CORS(app)
 
 # 配置OpenAI客户端
 client = OpenAI(
