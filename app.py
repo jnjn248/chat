@@ -3,7 +3,7 @@ from openai import OpenAI
 import os
 import json
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates', static_folder=None)
 
 # 配置OpenAI客户端
 client = OpenAI(
